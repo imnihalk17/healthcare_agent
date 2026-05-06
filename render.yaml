@@ -3,7 +3,7 @@ services:
     name: rag-api
     runtime: python
     plan: starter
-    buildCommand: pip install -r requirements.txt
+    buildCommand: pip install --only-binary :all: -r requirements.txt
     startCommand: python api_production.py
     envVars:
       - key: PORT
