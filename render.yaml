@@ -2,6 +2,7 @@ services:
   - type: web
     name: rag-api
     runtime: python
+    pythonVersion: 3.12
     plan: starter
     buildCommand: pip install --only-binary :all: -r requirements.txt
     startCommand: python api_production.py
