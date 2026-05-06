@@ -1,11 +1,9 @@
 services:
   - type: web
     name: rag-api
-    runtime: python
-    pythonVersion: 3.12
+    env: docker
     plan: starter
-    buildCommand: pip install --only-binary :all: -r requirements.txt
-    startCommand: python api_production.py
+    dockerfilePath: Dockerfile
     envVars:
       - key: PORT
         value: 8000

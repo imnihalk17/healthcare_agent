@@ -21,4 +21,4 @@ ENV PYTHONUNBUFFERED=1
 ENV PORT=8000
 ENV HOST=0.0.0.0
 
-CMD ["python", "api_production.py"]
+CMD ["python", "-m", "uvicorn", "api_production:app", "--host", "0.0.0.0", "--port", "8000"]
