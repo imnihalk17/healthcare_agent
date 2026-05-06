@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: rag-api
+    runtime: python
+    plan: starter
+    buildCommand: pip install -r requirements.txt
+    startCommand: python api_production.py
+    envVars:
+      - key: PORT
+        value: 8000
+      - key: PYTHONUNBUFFERED
+        value: "1"
+    autoDeploy: true
+    disk:
+      name: chroma_db
+      mountPath: /app/chroma_db
+      sizeGB: 5
